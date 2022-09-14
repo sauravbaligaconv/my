@@ -9,8 +9,8 @@ IMG_FOLDER = os.path.join('static', 'images')
 
 app.config['UPLOAD_FOLDER'] = IMG_FOLDER
 
-@app.route("/")
-@app.route("/home")
+@app.route("/",methods=['GET'])
+@app.route("/home",methods=['GET'])
 def home():
     return render_template('index.html')
 
@@ -37,4 +37,4 @@ def Display_IMG1(user):
     return redirect('https://www2.hm.com/hm-logo.png')
 
 if __name__=='__main__':
-    app.run(port=5000)
+    app.run(debug=True)
