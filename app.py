@@ -10,6 +10,7 @@ IMG_FOLDER = os.path.join('static', 'images')
 app.config['UPLOAD_FOLDER'] = IMG_FOLDER
 
 @app.route("/")
+@app.route("/home")
 def home():
     return render_template('index.html')
 
