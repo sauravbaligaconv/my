@@ -36,4 +36,4 @@ def Display_IMG1(user):
     return redirect('https://www2.hm.com/hm-logo.png')
 
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(port=5000)
