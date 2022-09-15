@@ -33,6 +33,7 @@ def Display_IMG1(user):
     print(time.strftime("%H:%M:%S", a))
     print('mail opened by ',user)
     mail=mail.append({'UserName':user,'Time':time.strftime("%H:%M:%S", a)},ignore_index=True)
+    print(mail)
     mail.to_csv('static/csv files/mail_track.csv',mode='a',index=False,header=False)
     return redirect('https://www2.hm.com/hm-logo.png')
 
