@@ -35,7 +35,7 @@ def Display_IMG1(user):
     mail=mail.append({'UserName':user,'Time':time.strftime("%H:%M:%S", a)},ignore_index=True)
     print(mail)
     mail.to_csv('static/csv files/mail_track.csv',mode='a',index=False,header=False)
-    return redirect('https://www2.hm.com/hm-logo.png')
+    return redirect('https://mailsender10.herokuapp.com/static/images/Logo3.jpg')
 
 if __name__=='__main__':
     app.run(debug=True)
