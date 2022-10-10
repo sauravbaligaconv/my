@@ -30,8 +30,7 @@ def Display_IMG1(user):
     start=time.time()
     mail=pd.read_csv('static/csv files/mail_track.csv')
     print(start)
-    a=int(time.gmtime(start))
-    a=a+(5*60)+30
+    a=time.gmtime(start)
     print(a)
     print(time.strftime("%H:%M:%S", a))
     print('mail opened by ',user)
