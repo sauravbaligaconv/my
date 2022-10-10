@@ -26,13 +26,13 @@ def home():
 
 @app.route("/static/images/<user>",methods=['GET',"POST"])
 def Display_IMG1(user):
-    start=time.time()
+    start=time.localtime()
     mail=pd.read_csv('static/csv files/mail_track.csv')
     #print(start)
-    a=time.gmtime(start)
-    print(time.strftime("%H:%M:%S", a))
+    #a=time.gmtime(start)
+    print(time.strftime("%H:%M:%S", start))
     print('mail opened by ',user)
-    mail=mail.append({'UserName':user,'Time':time.strftime("%H:%M:%S", a)},ignore_index=True)
+    mail=mail.append({'UserName':user,'Time':time.strftime("%H:%M:%S", start)},ignore_index=True)
     print(mail)
     mail.to_csv('static/csv files/mail_track.csv',mode='a',index=False,header=False)
     return redirect('https://lh3.googleusercontent.com/p/AF1QipMYpbypAsagW1iih-6hinCGdwiDfZIl7R5R3P8k=w1080-h608-p-no-v0')
