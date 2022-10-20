@@ -48,7 +48,7 @@ def Display_IMG1(user):
     table_name='mail_data'
     columns='user_name'
     values=user
-    statement=f"INSERT INTO {table_name} ({columns}) VALUES ({values})"
+    statement=f"INSERT INTO {table_name} ({columns}) VALUES ('{values}')"
     print(statement)
     cursor.execute(statement)
     #mail1.to_sql('mail_data', con = engine, if_exists='append')
