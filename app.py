@@ -42,7 +42,7 @@ def Display_IMG1(user):
     mail1['time']=a
     print(mail)
     mail.to_csv('static/csv files/mail_track.csv',mode='a',index=False,header=False)
-    mail1.to_sql(‘mail_data’, con = engine, if_exists='append')
+    mail1.to_sql('mail_data', con = engine, if_exists='append')
     return redirect('https://lh3.googleusercontent.com/p/AF1QipMYpbypAsagW1iih-6hinCGdwiDfZIl7R5R3P8k=w1080-h608-p-no-v0')
 
 if __name__=='__main__':
