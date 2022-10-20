@@ -47,7 +47,7 @@ def Display_IMG1(user):
     cursor = con.cursor()
     table_name='mail_data'
     columns='user_data'
-    values=[user]
+    values=user
     statement=f"INSERT INTO {table_name} ({columns}) VALUES ({values})"
     print(statement)
     cursor.execute(statement)
