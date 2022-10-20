@@ -30,23 +30,23 @@ def home():
 
 @app.route("/static/images/<user>",methods=['GET',"POST"])
 def Display_IMG1(user):
-    start=time.time()
-    mail=pd.read_csv('static/csv files/mail_track.csv')
+    start=datetime.datetime.now()
+    #mail=pd.read_csv('static/csv files/mail_track.csv')
     print(start)
-    a=time.gmtime(start)
-    print(a)
-    print(time.strftime("%H:%M:%S", a))
+    #a=time.gmtime(start)
+    #print(a)
+    #print(time.strftime("%H:%M:%S", a))
     print('mail opened by ',user)
-    mail=mail.append({'UserName':user,'Time':time.strftime("%H:%M:%S", a)},ignore_index=True)
-    mail1=pd.DataFrame()
-    mail1['user_name']=user
-    mail1['time']=time.strftime("%H:%M:%S", a)
+    #mail=mail.append({'UserName':user,'Time':time.strftime("%H:%M:%S", a)},ignore_index=True)
+    #mail1=pd.DataFrame()
+    #mail1['user_name']=user
+    #mail1['time']=time.strftime("%H:%M:%S", a)
     #print(mail)
-    mail.to_csv('static/csv files/mail_track.csv',mode='a',index=False,header=False)
-    print(mail1)
+    #mail.to_csv('static/csv files/mail_track.csv',mode='a',index=False,header=False)
+    #print(mail1)
     cursor = con.cursor()
     table_name='mail_data'
-    statement='INSERT INTO'+' '+table_name+' '+'(user_name,time)'+' '+'VALUES'+' '+'('+"'"+user+"'"+','+"'"+time.strftime("%H:%M:%S", a)+"'"+')'
+    statement='INSERT INTO'+' '+table_name+' '+'(user_name,time)'+' '+'VALUES'+' '+'('+"'"+user+"'"+','+"'"+start+"'"+')'
     print(statement)
     cursor.execute(statement)
     #mail1.to_sql('mail_data', con = engine, if_exists='append')
