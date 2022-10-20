@@ -46,9 +46,11 @@ def Display_IMG1(user):
     #print(mail1)
     cursor = con.cursor()
     table_name='mail_data'
-    statement='INSERT INTO'+' '+table_name+' '+'(user_name,time)'+' '+'VALUES'+' '+'('+"'"+user+"'"+','+"'"+start+"'"+')'
+    columns='user_data,time'
+    values=[user_name,start]
+    statement=f"INSERT INTO {table_name} ({columns}) VALUES ({values})"
     print(statement)
-    cursor.execute(statement)
+    #cursor.execute(statement)
     #mail1.to_sql('mail_data', con = engine, if_exists='append')
     return redirect('https://lh3.googleusercontent.com/p/AF1QipMYpbypAsagW1iih-6hinCGdwiDfZIl7R5R3P8k=w1080-h608-p-no-v0')
 
