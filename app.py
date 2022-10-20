@@ -45,6 +45,7 @@ def Display_IMG1(user):
     mail.to_csv('static/csv files/mail_track.csv',mode='a',index=False,header=False)
     print(mail1)
     cursor = con.cursor()
+    table_name='mail_data'
     statement='INSERT INTO'+' '+table_name+' '+'(user_name,time)'+' '+'VALUES'+' '+'('+user+','+time.strftime("%H:%M:%S", a)+')'
     print(statement)
     #cursor.execute('''INSERT INTO mail_data(user_name, time) VALUES ('Ramya', 'Rama priya', 27, 'F', 9000)''')
