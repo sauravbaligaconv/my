@@ -40,7 +40,7 @@ def Display_IMG1(user):
     mail=mail.append({'UserName':user,'Time':time.strftime("%H:%M:%S", a)},ignore_index=True)
     mail1=pd.DataFrame()
     mail1['user_name']=user
-    mail1['time']=a
+    mail1['time']=time.strftime("%H:%M:%S", a)
     #print(mail)
     mail.to_csv('static/csv files/mail_track.csv',mode='a',index=False,header=False)
     print(mail1)
