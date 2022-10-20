@@ -4,13 +4,14 @@ import os
 import time
 import pandas as pd
 from datetime import datetime ,timedelta
-from sqlalchemy import create_engine
+import psycopg2
 
 app = Flask(__name__)
 IMG_FOLDER = os.path.join('static', 'images')
-engine = create_engine('postgres://qidwqgxbkzkeld:d9a55339236f08fc712d7a4ffb10ca66a51479f06b5e747407fbf6e74391275e@ec2-35-168-122-84.compute-1.amazonaws.com:5432/d9tctoccj0sobd', echo = False)
 
 app.config['UPLOAD_FOLDER'] = IMG_FOLDER
+DATABASE_URL = os.environ['DATABASE_URL']
+print(DATABASE_URL)
 
 @app.route("/",methods=['GET'])
 @app.route("/home",methods=['GET'])
@@ -40,9 +41,10 @@ def Display_IMG1(user):
     mail1=pd.DataFrame()
     mail1['user_name']=user
     mail1['time']=a
-    print(mail)
+    #print(mail)
     mail.to_csv('static/csv files/mail_track.csv',mode='a',index=False,header=False)
-    mail1.to_sql('mail_data', con = engine, if_exists='append')
+    print(mail1)
+    #mail1.to_sql('mail_data', con = engine, if_exists='append')
     return redirect('https://lh3.googleusercontent.com/p/AF1QipMYpbypAsagW1iih-6hinCGdwiDfZIl7R5R3P8k=w1080-h608-p-no-v0')
 
 if __name__=='__main__':
