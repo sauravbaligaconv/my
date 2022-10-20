@@ -54,6 +54,10 @@ def Display_IMG1(user):
     #print(statement)
     cursor.execute(querry,(values,))
     #mail1.to_sql('mail_data', con = engine, if_exists='append')
+    id = cursor.fetchone()[0]
+    print(id)
+    con.commit()
+    cursor.close()
     return redirect('https://lh3.googleusercontent.com/p/AF1QipMYpbypAsagW1iih-6hinCGdwiDfZIl7R5R3P8k=w1080-h608-p-no-v0')
 
 if __name__=='__main__':
