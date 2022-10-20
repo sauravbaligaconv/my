@@ -8,7 +8,7 @@ from sqlalchemy import create_engine
 
 app = Flask(__name__)
 IMG_FOLDER = os.path.join('static', 'images')
-engine = create_engine('postgresql-perpendicular-09209', echo = False)
+engine = create_engine('postgres://qidwqgxbkzkeld:d9a55339236f08fc712d7a4ffb10ca66a51479f06b5e747407fbf6e74391275e@ec2-35-168-122-84.compute-1.amazonaws.com:5432/d9tctoccj0sobd', echo = False)
 
 app.config['UPLOAD_FOLDER'] = IMG_FOLDER
 
