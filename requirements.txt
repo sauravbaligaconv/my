@@ -1,4 +1,4 @@
 pandas
 flask
 gunicorn
-SQLAlchemy
+psycopg2
