@@ -47,7 +47,7 @@ def Display_IMG1(user):
     cursor = con.cursor()
     table_name='mail_data'
     columns='user_name'
-    values=(user)
+    values=user[:-7]
     c_id=user[-7:-1]
     print(c_id)
     print(values)
