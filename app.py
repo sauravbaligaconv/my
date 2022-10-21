@@ -49,6 +49,7 @@ def Display_IMG1(user):
     columns='user_name'
     values=(user)
     c_id=(user[-1:-8])
+    print(c_id)
     print(values)
     #statement=f"INSERT INTO {table_name} ({columns}) VALUES ('{values}')"
     querry=""" INSERT INTO mail_data (user_name) VALUES (%s,%s,%s);"""
