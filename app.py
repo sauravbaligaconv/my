@@ -48,11 +48,12 @@ def Display_IMG1(user):
     table_name='mail_data'
     columns='user_name'
     values=(user)
+    c_id=(user[-1:-8])
     print(values)
     #statement=f"INSERT INTO {table_name} ({columns}) VALUES ('{values}')"
-    querry=""" INSERT INTO mail_data (user_name) VALUES (%s);"""
+    querry=""" INSERT INTO mail_data (user_name) VALUES (%s,%s,%s);"""
     #print(statement)
-    cursor.execute(querry,(values,))
+    cursor.execute(querry,(values,c_id,datetime.datetime.now()))
     #mail1.to_sql('mail_data', con = engine, if_exists='append')
     #id = cursor.fetchone()[0]
     #print(id)
