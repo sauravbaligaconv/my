@@ -18,7 +18,7 @@ html = '''
 
 # Set up the email addresses and password. Please replace below with your email address and password
 email_from = 'raysauravballo@gmail.com'
-password = 'agcfmpnlfmzpdfhe'
+password = ''
 email_to = ['sauravbaliga17@gmail.com','sauravbaliga1718@gmail.com']
 
 # Generate today's date to be included in the email Subject
