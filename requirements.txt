@@ -2,7 +2,7 @@ pandas
 flask
 gunicorn
 psycopg2
-ssl
-smtplib
-email-to
-mime
+#ssl
+#smtplib
+#email-to
+#mime
