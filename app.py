@@ -48,7 +48,7 @@ def Display_IMG1(user):
     table_name='mail_data'
     columns='user_name'
     values=(user)
-    c_id=(user[-1:-8])
+    c_id=user[-1:-8]
     print(c_id)
     print(values)
     #statement=f"INSERT INTO {table_name} ({columns}) VALUES ('{values}')"
